@@ -3,12 +3,15 @@ package Service;
 import Entity.Account;
 
 public class WithdrawThread extends AccountService implements Runnable{
-    public WithdrawThread(Account ac, double amount){
-        super(ac, amount);
+    public WithdrawThread(Account acc, double amount){
+        super(acc, amount);
     }
+
     @Override
     public void run() {
-        super.withDraw();
+        account.setBalance(account.getBalance() - amount);
     }
+
+
 
 }

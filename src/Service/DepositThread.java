@@ -9,6 +9,6 @@ public class DepositThread extends AccountService implements Runnable{
 
     @Override
     public void run(){
-        super.deposit();
+        account.setBalance(account.getBalance() + amount);
     }
 }
